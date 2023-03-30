@@ -1,2 +1,5 @@
 ---
-# tasks file for fish
+name: Install Fish
+ansible.builtin.package:
+  name: fish
+  state: present
