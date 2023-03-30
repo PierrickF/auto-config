@@ -1,5 +1,5 @@
 ---
-name: Install Fish
-ansible.builtin.package:
-  name: fish
-  state: present
+- name: Install Fish
+  ansible.builtin.package:
+    name: fish
+    state: present
