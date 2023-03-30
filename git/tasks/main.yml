@@ -7,4 +7,4 @@
 - name: Retrieve config files from GitHub
   ansible.builtin.git:
     repo: https://github.com/PierrickF/dotfiles.git
-    dest: /tmp
+    dest: /tmp/ansible_dl
