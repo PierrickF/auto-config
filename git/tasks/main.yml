@@ -1,2 +1,5 @@
 ---
-# tasks file for git
+- name: Install Git
+  ansible.builtin.package:
+    name: git
+    state: present
