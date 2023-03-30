@@ -3,3 +3,7 @@
   ansible.builtin.package:
     name: fish
     state: present
+
+- name: Set Fish as default shell
+  ansible.builtin.user:
+    shell: /usr/bin/fish
