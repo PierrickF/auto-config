@@ -1,2 +1,10 @@
 ---
-# tasks file for files
+name: Copy Neovim files
+ansible.builtin.copy:
+  src: /tmp/ansible_dl/dotfiles/nvim
+  dest: /home/pierrick/.config/
+
+name: Copy Fish files
+ansible.builtin.copy:
+  src: /tmp/ansible_dl/dotfiles/fish
+  dest: /home/pierrick/.config/
