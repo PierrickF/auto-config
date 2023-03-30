@@ -2,6 +2,11 @@
 - hosts: 192.168.1.14
   become: yes
   roles:
-    - files
     - neovim
     - fish
+    - files
+  post_tasks:
+    - name: Remove config files
+      ansible.builtin.file:
+        path: /tmp/ansible_dl
+        state: absent
