@@ -3,3 +3,8 @@
   ansible.builtin.package:
     name: neovim
     state: present
+
+- name: Install Vundle
+  ansible.builtin.git:
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: /home/pierrick/.vim/bundle/Vundle.vim
