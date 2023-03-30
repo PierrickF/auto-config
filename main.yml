@@ -1,0 +1,7 @@
+---
+- hosts: 192.168.1.14
+  become: yes
+  roles:
+    - files
+    - neovim
+    - fish
