@@ -7,7 +7,7 @@
 - name: Install Vundle
   ansible.builtin.git:
     repo: https://github.com/VundleVim/Vundle.vim.git
-    dest: /home/pierrick/.vim/bundle/Vundle.vim
+    dest: "/home/{{ user }}/.vim/bundle/Vundle.vim"
 
 - name: Configure Vundle
-  ansible.builtin.shell: vim +PluginInstall +qall --headless
+  ansible.builtin.shell: nvim +PluginInstall +qall --headless

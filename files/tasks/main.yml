@@ -3,17 +3,17 @@
   ansible.builtin.copy:
     remote_src: true
     src: /tmp/ansible_dl/dotfiles/nvim
-    dest: /home/pierrick/.config/
+    dest: "/home/{{ user }}/.config/"
 
 - name: Copy Fish files
   ansible.builtin.copy:
     remote_src: true
     src: /tmp/ansible_dl/dotfiles/fish
-    dest: /home/pierrick/.config/
+    dest: "/home/{{ user }}/.config/"
 
-- name: Set owner of files to pierrick
+- name: Set owner of files to {{ user }}
   ansible.builtin.file:
     recurse: true
-    path: /home/pierrick/.config/
-    owner: pierrick
-    group: pierrick
+    dest: "/home/{{ user }}/.config/"
+    owner: "{{ user }}"
+    group: "{{ user }}"
