@@ -9,5 +9,13 @@
     repo: https://github.com/VundleVim/Vundle.vim.git
     dest: "/home/{{ user }}/.vim/bundle/Vundle.vim"
 
+- name: Set owner of files in .vim/ to {{ user }}
+  ansible.builtin.file:
+    recurse: true
+    dest: "/home/{{ user }}/.vim/"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: Configure Vundle
+  become_user: "{{ user }}"
   ansible.builtin.shell: nvim +PluginInstall +qall --headless

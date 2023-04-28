@@ -1,11 +1,12 @@
 ---
 - hosts: all
   become: yes
+  remote_user: "{{ user }}"
   roles:
     - git
+    - files
     - neovim
     - fish
-    - files
   post_tasks:
     - name: Remove config files
       ansible.builtin.file:

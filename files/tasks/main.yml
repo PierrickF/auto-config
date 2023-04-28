@@ -5,13 +5,19 @@
     src: /tmp/ansible_dl/dotfiles/nvim
     dest: "/home/{{ user }}/.config/"
 
+- name: Set {{ user }} name in Neovim config file
+  ansible.builtin.replace:
+    path: "/home/{{ user}}/.config/nvim/init.vim"
+    regexp: "pierrick"
+    replace: "{{ user }}"
+
 - name: Copy Fish files
   ansible.builtin.copy:
     remote_src: true
     src: /tmp/ansible_dl/dotfiles/fish
     dest: "/home/{{ user }}/.config/"
 
-- name: Set owner of files to {{ user }}
+- name: Set owner of files in .config/ to {{ user }}
   ansible.builtin.file:
     recurse: true
     dest: "/home/{{ user }}/.config/"
