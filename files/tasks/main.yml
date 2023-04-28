@@ -10,3 +10,10 @@
     remote_src: true
     src: /tmp/ansible_dl/dotfiles/fish
     dest: /home/pierrick/.config/
+
+- name: Set owner of files to pierrick
+  ansible.builtin.file:
+    recurse: true
+    path: /home/pierrick/.config/
+    owner: pierrick
+    group: pierrick
